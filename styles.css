@@ -1,3 +1,61 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.sky-background {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(135deg, #ff6f61, #ff9a8b, #ffcccb, #a283c6, #5e5a7d);
+    background-size: 200% 200%;
+    animation: skyAnimation 20s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes skyAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/cloudy.png');
+    opacity: 0.3;
+    animation: cloudsMove 60s linear infinite;
+}
+
+@keyframes cloudsMove {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 .test-class {
-    background-color: brown;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
 }
