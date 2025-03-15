@@ -5,34 +5,45 @@ body, html {
     overflow: hidden;
 }
 
-.sky-background {
+header {
+    background-color: black;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px; 
+    text-align: left;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10; 
+}
+
+header .header-content h1 {
+    margin: 0;
+    padding: 8px;
+    font-size: 30px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(255, 255, 255); 
+}
+
+.background {
     height: 100vh;
-    width: 100vw;
-    background: linear-gradient(135deg, #7562a7, #a572c3, #d17d8e, #cb7286, #cb7286, #cb7286);
-    background-size: 200% 200%;
-    animation: skyAnimation 20s ease infinite;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(128, 128, 128, 0.7)); 
+    background-image: url("./images/Background5.png"); 
+    background-size: cover;
+    background-blend-mode: overlay; 
     position: relative;
     overflow: hidden;
 }
 
-.clouds {
+.background::before {
+    content: "";
     position: absolute;
-    bottom: 20%;
-    left: 0; 
-    width: 200%;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    background: url('images/Clouds.png') repeat-x;
-    opacity: 0.2;
-    animation: cloudsMove 360s linear infinite;
-}
-
-@keyframes cloudsMove {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 .test-class {
@@ -47,3 +58,4 @@ body, html {
     transform: translate(-50%, -50%);
     border-radius: 10px;
 } 
+
