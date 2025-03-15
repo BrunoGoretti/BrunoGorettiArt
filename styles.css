@@ -8,34 +8,22 @@ body, html {
 .sky-background {
     height: 100vh;
     width: 100vw;
-    background: linear-gradient(135deg, #ff6f61, #ff9a8b, #ffcccb, #a283c6, #5e5a7d);
+    background: linear-gradient(135deg, #7562a7, #a572c3, #d17d8e, #cb7286, #cb7286, #cb7286);
     background-size: 200% 200%;
     animation: skyAnimation 20s ease infinite;
     position: relative;
     overflow: hidden;
 }
 
-@keyframes skyAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
 .clouds {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    bottom: 20%;
+    left: 0; 
+    width: 200%;
     height: 100%;
-    background: url('https://www.transparenttextures.com/patterns/cloudy.png');
-    opacity: 0.3;
-    animation: cloudsMove 60s linear infinite;
+    background: url('images/Clouds.png') repeat-x;
+    opacity: 0.2;
+    animation: cloudsMove 360s linear infinite;
 }
 
 @keyframes cloudsMove {
@@ -43,7 +31,7 @@ body, html {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(-100%);
     }
 }
 
