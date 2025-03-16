@@ -14,7 +14,7 @@ header {
     position: relative;
     top: 0;
     width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 header .header-content h1 {
