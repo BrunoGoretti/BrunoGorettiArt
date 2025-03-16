@@ -41,11 +41,12 @@ header .header-content h1 {
     justify-content: center;
     flex-direction: column;
     padding-top: 70px; 
+    z-index: 2;
 }
 
 .background::before {
     content: "";
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -65,8 +66,8 @@ header .header-content h1 {
 }
 
 .card {
-    width: 30vw; /* Use viewport width to maintain a consistent card size */
-    max-width: 350px; /* Optionally, add a maximum width for large screens */
+    width: 30vw; 
+    max-width: 350px; 
     height: auto;
     background: rgb(0, 0, 0);
     border-radius: 10px;
@@ -85,23 +86,25 @@ header .header-content h1 {
     height: auto;
     object-fit: cover;
     border-radius: 5px;
-    z-index: 4; /* Ensure the image is above the card content */
+    z-index: 4; 
 }
 
 .card-content {
     text-align: center;
     font-family: Arial, sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-/* Media Queries for Responsive Design */
 @media (max-width: 1024px) {
     .card {
-        width: 40vw; /* Increase the size slightly for tablets */
+        width: 40vw; 
     }
 }
 
 @media (max-width: 768px) {
     .card {
-        width: 50vw; /* Adjust for smaller screens */
+        width: 50vw; 
     }
 }
