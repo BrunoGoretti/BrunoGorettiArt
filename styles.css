@@ -64,8 +64,8 @@ header .header-content h1 {
 }
 
 .card {
-    width: 20vw; /* Adjust this value to make it narrower */
-    max-width: 250px; /* Adjust max-width as necessary */
+    width: 20vw; 
+    max-width: 250px;
     height: auto;
     background: rgb(0, 0, 0);
     border-radius: 10px;
@@ -79,15 +79,16 @@ header .header-content h1 {
     padding: 10px;
     z-index: 3;
     position: relative;
-    /* border: 1px solid #DB5892; */
-    border: 1px solid #1ae1e1;
+    /* border: 2px solid #DB5892; */
+    border: 2px solid #1ae1e1;
     cursor: pointer;
-    transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; 
 }
 
 .card:hover {
     /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 15px rgba(219, 88, 146, 1);  */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 15px rgba(26, 225, 225, 1); 
+    transform: scale(1.05);
 }
 
 .card img {
