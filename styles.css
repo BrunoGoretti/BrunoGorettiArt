@@ -65,7 +65,8 @@ header .header-content h1 {
 }
 
 .card {
-    width: calc(33.333% - 40px); /* Adjust based on the number of cards per row */
+    width: 30vw; /* Use viewport width to maintain a consistent card size */
+    max-width: 350px; /* Optionally, add a maximum width for large screens */
     height: auto;
     background: rgb(0, 0, 0);
     border-radius: 10px;
@@ -76,7 +77,7 @@ header .header-content h1 {
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    z-index: 3; /* Ensure cards are above the overlay */
+    z-index: 3;
 }
 
 .card img {
@@ -95,12 +96,12 @@ header .header-content h1 {
 /* Media Queries for Responsive Design */
 @media (max-width: 1024px) {
     .card {
-        width: calc(50% - 40px); /* Two cards per row on tablets */
+        width: 40vw; /* Increase the size slightly for tablets */
     }
 }
 
 @media (max-width: 768px) {
     .card {
-        width: calc(100% - 40px); /* One card per row on mobile phones */
+        width: 50vw; /* Adjust for smaller screens */
     }
 }
