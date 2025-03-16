@@ -28,7 +28,8 @@ header .header-content h1 {
 }
 
 .background {
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     width: 100%;
     background: url("./images/Background7.jpg");
     background-size: cover;
@@ -38,11 +39,13 @@ header .header-content h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    padding-top: 70px; 
 }
 
 .background::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -51,25 +54,14 @@ header .header-content h1 {
     z-index: 1;
 }
 
-.test-class {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 20px;
-    text-align: center;
-    font-size: 24px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-}
-
 .artwork-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     padding: 20px;
+    position: relative;
+    z-index: 2;
 }
 
 .card {
@@ -84,6 +76,7 @@ header .header-content h1 {
     align-items: center;
     justify-content: space-between;
     padding: 10px;
+    z-index: 2;
 }
 
 .card img {
@@ -91,6 +84,7 @@ header .header-content h1 {
     height: 80%;
     object-fit: cover;
     border-radius: 5px;
+    z-index: 3;
 }
 
 .card-content {
