@@ -61,16 +61,17 @@ header .header-content h1 {
     padding: 20px;
     position: relative;
     z-index: 2;
+    max-width: 1200px; /* Optional: Limit the maximum width of the container */
+    margin: 0 auto; /* Center the container */
 }
 
 .card {
-    width: 20vw; 
-    max-width: 250px;
+    width: calc(33.33% - 20px); /* 3 cards per row with gap */
+    max-width: 350px; /* Maximum width for each card */
     height: auto;
     background: rgb(0, 0, 0);
     border-radius: 10px;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 3px rgba(219, 88, 146, 0.8);  */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 3px rgba(26, 225, 225, 1); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 3px rgba(26, 225, 225, 1);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -79,10 +80,9 @@ header .header-content h1 {
     padding: 10px;
     z-index: 3;
     position: relative;
-    /* border: 2px solid #DB5892; */
     border: 2px solid #1ae1e1;
     cursor: pointer;
-    transition: box-shadow 0.3s ease, transform 0.3s ease; 
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .card:hover {
