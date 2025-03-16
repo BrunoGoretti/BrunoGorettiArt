@@ -109,12 +109,18 @@ header .header-content h1 {
 
 @media (max-width: 1024px) {
     .card {
-        width: 30vw;
+        width: 45vw;
     }
 }
 
 @media (max-width: 768px) {
     .card {
-        width: 40vw;
+        width: 60vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 80vw; 
     }
 }
