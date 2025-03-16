@@ -2,18 +2,19 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 header {
     background-color: black;
     color: rgb(255, 255, 255);
-    padding: 10px 20px; 
+    padding: 10px 20px;
     text-align: left;
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 10; 
+    z-index: 10;
 }
 
 header .header-content h1 {
@@ -22,18 +23,21 @@ header .header-content h1 {
     margin: 0;
     padding: 8px;
     font-size: 30px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: rgb(255, 255, 255); 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(255, 255, 255);
 }
 
 .background {
     height: 100vh;
     width: 100%;
-    background: url("./images/Background6.jpg"); 
+    background: url("./images/Background7.jpg");
     background-size: cover;
-    background-blend-mode: overlay; 
+    background-blend-mode: overlay;
     position: relative;
-    overflow: hidden;
+    overflow-x: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .background::before {
@@ -58,5 +62,38 @@ header .header-content h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 10px;
-} 
+}
 
+.artwork-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    width: 300px;
+    height: 500px;
+    background: rgb(0, 0, 0);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.card img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.card-content {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
