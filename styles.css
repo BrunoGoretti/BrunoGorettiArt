@@ -1,143 +1,175 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-header {
-    background-color: black;
-    color: rgb(255, 255, 255);
-    padding: 10px 20px;
-    text-align: left;
-    position: relative;
-    top: 0;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  color: inherit;
 }
 
-header .header-content h1 {
-    position: relative;
-    left: 10px;
-    margin: 0;
-    padding: 8px;
-    font-size: 30px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: rgb(255, 255, 255);
+header {
+  background-color: black;
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  text-align: left;
+  position: relative;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 97%;
+}
+
+.header-container h1 {
+  margin: 0;
+  padding: 8px;
+  font-size: 30px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: rgb(255, 255, 255);
 }
 
 .header-title {
-    text-decoration: none;
-    color: inherit;
-    transition: text-shadow 0.5s ease;
-  }
-  
-  .header-title:hover {
-    text-shadow: 0 0 1px #ffffff, 0 0 3px #ffffff;
-  }
+  text-decoration: none;
+  color: inherit;
+  transition: text-shadow 0.5s ease;
+}
+
+.header-title:hover {
+  text-shadow: 0 0 1px #ffffff, 0 0 3px #ffffff;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.header-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 16px;
+  transition: opacity 0.3s ease;
+}
+
+.header-button:hover {
+  opacity: 0.8;
+}
+
+.header-button img {
+  width: 24px;
+  height: 24px;
+}
 
 .background {
-    min-height: 100vh;
-    height: auto;
-    width: 100%;
-    background: url("./images/Background7.jpg");
-    background-size: cover;
-    background-blend-mode: overlay;
-    position: relative;
-    overflow-x: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    z-index: 1;
+  min-height: 100vh;
+  height: auto;
+  width: 100%;
+  background: url("./images/Background7.jpg");
+  background-size: cover;
+  background-blend-mode: overlay;
+  position: relative;
+  overflow-x: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1;
 }
 
 .background::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: -1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
 }
 
 .artwork-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-    position: relative;
-    z-index: 2;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .card {
-    width: calc(33.33% - 20px);
-    max-width: 350px;
-    height: auto;
-    background: rgb(0, 0, 0);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 3px rgba(26, 225, 225, 1);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    z-index: 3;
-    position: relative;
-    border: 2px solid #1ae1e1;
-    cursor: pointer;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  width: calc(33.33% - 20px);
+  max-width: 350px;
+  height: auto;
+  background: rgb(0, 0, 0);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 3px rgba(26, 225, 225, 1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  z-index: 3;
+  position: relative;
+  border: 2px solid #1ae1e1;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .card:hover {
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 15px rgba(219, 88, 146, 1);  */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 15px rgba(26, 225, 225, 1); 
-    transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 15px rgba(26, 225, 225, 1);
+  transform: scale(1.05);
 }
 
 .card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 5px;
-    z-index: 4; 
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  z-index: 4;
 }
 
 .card-content {
-    text-align: center;
-    font-family: Arial, sans-serif;
-    color: #ffffff;
-    font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 @media (max-width: 1024px) {
-    .card {
-        width: 45vw;
-    }
+  .card {
+    width: 45vw;
+  }
 }
 
 @media (max-width: 768px) {
-    .card {
-        width: 60vw;
-    }
+  .card {
+    width: 60vw;
+  }
 }
 
 @media (max-width: 480px) {
-    .card {
-        width: 80vw; 
-    }
+  .card {
+    width: 80vw;
+  }
 }
-
