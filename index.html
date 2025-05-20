@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -14,9 +13,8 @@
           <a href="index.html" class="header-title">Bruno Goretti Art</a>
         </h1>
         <div class="header-buttons">
-          <a href="about.html" class="header-button" target="_blank">
-            <span>About</span>
-          </a>
+          <a href="index.html" class="header-button" target="_blank"><span>My artwork</span></a>
+          <a href="about.html" class="header-button" target="_blank"><span>About</span></a>
           <a href="https://www.deviantart.com/brunogoretti" class="header-button" target="_blank">
             <img src="images/DeviantArtLogo.png" alt="DeviantArt" />
           </a>
@@ -32,79 +30,12 @@
         </div>
       </div>
     </header>
-    <div class="background">
-      <section class="artwork-carousel">
-        <div class="carousel-container">
-          <div class="carousel-track">
-            <div class="card">
-              <a href="miami-pop-art.html">
-                <img src="./images/NomadsStance.jpg" alt="Artwork 1" />
-              </a>
-            </div>
-            <div class="card">
-              <a href="ls-pop-art.html">
-                <img src="./images/LSStreetGang.jpg" alt="Artwork 2" />
-              </a>
-            </div>
-            <div class="card">
-              <a href="modern-miami-pop-art.html">
-                <img src="./images/TommyRun.jpg" alt="Artwork 3" />
-              </a>
-            </div>
-            <div class="card">
-              <a href="fever-pop-art.html">
-                <img src="./images/JB.jpg" alt="Artwork 4" />
-              </a>
-            </div>
-            <div class="card">
-              <a href="pop-line-art.html">
-                <img src="./images/ShaoVsJade.jpg" alt="Artwork 5" />
-              </a>
-            </div>
-            <div class="card">
-              <a href="concept-art.html">
-                <img src="./images/TheThingMonster.jpg" alt="Artwork 6" />
-              </a>
-            </div>
-            <div class="card">
-              <a href="horror-comics.html">
-                <img src="./images/Comics.jpg" alt="Artwork 7" />
-              </a>
-            </div>
-            <div class="card">
-              <a href="cartoon-crossover.html">
-                <img src="./images/FnvSB.jpg" alt="Artwork 8" />
-              </a>
-            </div>
-            <div class="card">
-              <a href="other-styles.html">
-                <img src="./images/OtherStyles.jpg" alt="Artwork 9" />
-              </a>
-            </div>
-          </div>
-          <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-          <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
-        </div>
-      </section>
+    <div class="background-slideshow-controls">
+      <button id="prev-background" class="background-nav-button">❮</button>
+      <button id="next-background" class="background-nav-button">❯</button>
     </div>
-    <script>
-      let currentIndex = 0;
-      const slides = document.querySelectorAll('.carousel-track .card');
-      const totalSlides = slides.length;
+    <div class="background-slideshow"></div>
 
-      function moveSlide(direction) {
-        currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
-        updateCarousel();
-      }
-
-      function updateCarousel() {
-        const track = document.querySelector('.carousel-track');
-        const slideWidth = slides[0].getBoundingClientRect().width;
-        track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-      }
-
-      window.addEventListener('resize', updateCarousel);
-      updateCarousel();
-    </script>
+    <script src="backgroundImages.js"></script>
   </body>
 </html>
