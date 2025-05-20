@@ -13,6 +13,11 @@ const backgroundImages = [
  
 ];
 
+backgroundImages.forEach((src) => {
+  const img = new Image();
+  img.src = src;
+});
+
 let currentImageIndex = 0;
 const backgroundDiv = document.querySelector('.background-slideshow');
 
