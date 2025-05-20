@@ -1,13 +1,16 @@
 const backgroundImages = [
+  'images/TurboBlonde.jpg',
   'images/NomadsStance.jpg',
-  'images/LSStreetGang.jpg',
-  'images/TommyRun.jpg',
-  'images/JB.jpg',
-  'images/ShaoVsJade.jpg',
+  'images/GingerGlow.jpg',
+  'images/VicAndPhil.jpg',
+  'images/FerrariF40.jpg',
+  'images/Agnello.jpg',
   'images/TheThingMonster.jpg',
-  'images/Comics.jpg',
-  'images/FnvSB.jpg',
-  'images/OtherStyles.jpg'
+  'images/AlienVsTheThing.jpg',
+  'images/AlienInvasion.jpg',
+  'images/LuciaAndJason.jpg',
+  'images/TommyRun.jpg',
+ 
 ];
 
 let currentImageIndex = 0;
