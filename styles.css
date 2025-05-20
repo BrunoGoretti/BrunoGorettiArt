@@ -110,6 +110,7 @@ header {
     height: 18px;
   }
 }
+
 .background {
   min-height: 100vh;
   height: auto;
@@ -118,7 +119,7 @@ header {
   background-size: cover;
   background-blend-mode: overlay;
   position: relative;
-  overflow-x: auto;
+  overflow-x: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -137,22 +138,27 @@ header {
   z-index: -1;
 }
 
-.artwork-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
+.artwork-carousel {
   position: relative;
-  z-index: 2;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 600px;
   margin: 0 auto;
+  padding: 20px;
+  z-index: 2;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 }
 
 .card {
-  width: calc(33.33% - 20px);
-  max-width: 350px;
-  height: auto;
+  min-width: 100%;
   background: rgb(0, 0, 0);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 3px rgba(26, 225, 225, 1);
@@ -160,18 +166,10 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   padding: 10px;
-  z-index: 3;
-  position: relative;
   border: 2px solid #1ae1e1;
   cursor: pointer;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.card:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 15px rgba(26, 225, 225, 1);
-  transform: scale(1.05);
 }
 
 .card img {
@@ -179,31 +177,59 @@ header {
   height: auto;
   object-fit: cover;
   border-radius: 5px;
-  z-index: 4;
 }
 
-.card-content {
-  text-align: center;
-  font-family: Arial, sans-serif;
-  color: #ffffff;
-  font-size: 20px;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+.card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 0 5px rgba(26, 225, 225, 1);
+  transform: scale(1.02);
 }
 
-@media (max-width: 1024px) {
-  .card {
-    width: 45vw;
-  }
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: #1ae1e1;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  z-index: 3;
+}
+
+.carousel-button:hover {
+  background: rgba(26, 225, 225, 0.8);
+  color: black;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
 }
 
 @media (max-width: 768px) {
-  .card {
-    width: 60vw;
+  .artwork-carousel {
+    max-width: 80vw;
+  }
+
+  .carousel-button {
+    font-size: 20px;
+    padding: 8px;
   }
 }
 
 @media (max-width: 480px) {
-  .card {
-    width: 80vw;
+  .artwork-carousel {
+    max-width: 90vw;
+  }
+
+  .carousel-button {
+    font-size: 18px;
+    padding: 6px;
   }
 }

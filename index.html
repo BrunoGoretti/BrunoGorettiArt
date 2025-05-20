@@ -14,96 +14,97 @@
           <a href="index.html" class="header-title">Bruno Goretti Art</a>
         </h1>
         <div class="header-buttons">
+          <a href="about.html" class="header-button" target="_blank">
+            <span>About</span>
+          </a>
           <a href="https://www.deviantart.com/brunogoretti" class="header-button" target="_blank">
             <img src="images/DeviantArtLogo.png" alt="DeviantArt" />
-            <span>My DeviantArt</span>
+          </a>
+          <a href="https://www.artstation.com/brunogoretti" class="header-button" target="_blank">
+            <img src="images/ArtStationLogo.png" alt="ArtStation" />
           </a>
           <a href="https://www.instagram.com/bruno_goretti/" class="header-button" target="_blank">
             <img src="images/InstagramLogo.png" alt="Instagram" />
-            <span>My Instagram</span>
           </a>
           <a href="https://discord.gg/eJGxNt6X2k" class="header-button" target="_blank">
             <img src="images/DiscordLogo.png" alt="Discord" />
-            <span>My Discord</span>
           </a>
         </div>
       </div>
     </header>
     <div class="background">
-      <section class="artwork-cards">
-        <div class="card">
-          <a href="miami-pop-art.html">
-            <img src="./images/NomadsStance.jpg" alt="Artwork 1" />
-            <div class="card-content">
-              <h3>Miami Pop Art</h3>
+      <section class="artwork-carousel">
+        <div class="carousel-container">
+          <div class="carousel-track">
+            <div class="card">
+              <a href="miami-pop-art.html">
+                <img src="./images/NomadsStance.jpg" alt="Artwork 1" />
+              </a>
             </div>
-          </a>
-        </div>
-        <div class="card">
-          <a href="ls-pop-art.html">
-            <img src="./images/LSStreetGang.jpg" alt="Artwork 2" />
-            <div class="card-content">
-              <h3>LA Pop Art</h3>
+            <div class="card">
+              <a href="ls-pop-art.html">
+                <img src="./images/LSStreetGang.jpg" alt="Artwork 2" />
+              </a>
             </div>
-          </a>
-        </div>
-        <div class="card">
-          <a href="modern-miami-pop-art.html">
-            <img src="./images/TommyRun.jpg" alt="Artwork 3" />
-            <div class="card-content">
-              <h3>Modern Miami Pop Art</h3>
+            <div class="card">
+              <a href="modern-miami-pop-art.html">
+                <img src="./images/TommyRun.jpg" alt="Artwork 3" />
+              </a>
             </div>
-          </a>
-        </div>
-        <div class="card">
-          <a href="fever-pop-art.html">
-            <img src="./images/JB.jpg" alt="Artwork 1" />
-            <div class="card-content">
-              <h3> Fever Pop Art </h3>
+            <div class="card">
+              <a href="fever-pop-art.html">
+                <img src="./images/JB.jpg" alt="Artwork 4" />
+              </a>
             </div>
-          </a>
-        </div>
-        <div class="card">
-          <a href="pop-line-art.html">
-            <img src="./images/ShaoVsJade.jpg" alt="Artwork 2" />
-            <div class="card-content">
-              <h3> Pop Line Art </h3>
+            <div class="card">
+              <a href="pop-line-art.html">
+                <img src="./images/ShaoVsJade.jpg" alt="Artwork 5" />
+              </a>
             </div>
-          </a>
-        </div>
-        <div class="card">
-          <a href="concept-art.html">
-            <img src="./images/TheThingMonster.jpg" alt="Artwork 3" />
-            <div class="card-content">
-              <h3>Concept Art</h3>
+            <div class="card">
+              <a href="concept-art.html">
+                <img src="./images/TheThingMonster.jpg" alt="Artwork 6" />
+              </a>
             </div>
-          </a>
-        </div>
-        <div class="card">
-          <a href="horror-comics.html">
-            <img src="./images/Comics.jpg" alt="Artwork 1" />
-            <div class="card-content">
-              <h3> Horror Comics </h3>
+            <div class="card">
+              <a href="horror-comics.html">
+                <img src="./images/Comics.jpg" alt="Artwork 7" />
+              </a>
             </div>
-          </a>
-        </div>
-        <div class="card">
-          <a href="cartoon-crossover.html">
-            <img src="./images/FnvSB.jpg" alt="Artwork 2" />
-            <div class="card-content">
-              <h3> Cartoon Crossover </h3>
+            <div class="card">
+              <a href="cartoon-crossover.html">
+                <img src="./images/FnvSB.jpg" alt="Artwork 8" />
+              </a>
             </div>
-          </a>
-        </div>
-        <div class="card">
-          <a href="other-styles.html">
-            <img src="./images/OtherStyles.jpg" alt="Artwork 3" />
-            <div class="card-content">
-              <h3>Other Styles</h3>
+            <div class="card">
+              <a href="other-styles.html">
+                <img src="./images/OtherStyles.jpg" alt="Artwork 9" />
+              </a>
             </div>
-          </a>
+          </div>
+          <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
         </div>
       </section>
     </div>
+    <script>
+      let currentIndex = 0;
+      const slides = document.querySelectorAll('.carousel-track .card');
+      const totalSlides = slides.length;
+
+      function moveSlide(direction) {
+        currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+        updateCarousel();
+      }
+
+      function updateCarousel() {
+        const track = document.querySelector('.carousel-track');
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+      }
+
+      window.addEventListener('resize', updateCarousel);
+      updateCarousel();
+    </script>
   </body>
 </html>
