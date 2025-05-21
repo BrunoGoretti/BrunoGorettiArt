@@ -13,14 +13,12 @@ a {
 }
 
 header {
-  /* background-color: black; */
   color: rgb(255, 255, 255);
   padding: 10px 20px;
   text-align: left;
   position: relative;
   top: 0;
   width: 100%;
-  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -60,6 +58,7 @@ header {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 16px;
   transition: opacity 0.3s ease;
+   padding: 8px 15px;
 }
 
 .header-button:hover {
@@ -223,7 +222,7 @@ body, html {
 }
 
 .background-default {
-  position: fixed; /* or absolute depending on design */
+  position: fixed;
   z-index: -1;
   top: 0;
   left: 0;
@@ -236,4 +235,21 @@ body, html {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.overlay-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.301); 
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0; 
+}
+
+header:hover ~ .overlay-background {
+  opacity: 1;
 }

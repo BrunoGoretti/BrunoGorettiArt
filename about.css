@@ -7,7 +7,6 @@ body {
   line-height: 1.6;
 }
 
-
 header {
   background-color: #1a1a1a;
   padding: 10px 20px;
@@ -15,7 +14,6 @@ header {
   position: relative;
   top: 0;
   width: 100%;
-  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,19 +28,6 @@ header {
   width: 97%; 
   flex-wrap: wrap; 
 }
-
-
-
-/* .header-container {
-  background-color: #1a1a1a;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  border-bottom: 2px solid #e3569a;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-} */
 
 .header-title {
   color: #ffffff;

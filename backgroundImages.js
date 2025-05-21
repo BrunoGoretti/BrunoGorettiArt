@@ -1,16 +1,14 @@
 const backgroundImages = [
   'images/TurboBlonde.jpg',
+  'images/TheThingMonster.jpg',
+  'images/AlienVsTheThing.jpg',
+  'images/AlienInvasion.jpg',
   'images/NomadsStance.jpg',
   'images/GingerGlow.jpg',
   'images/VicAndPhil.jpg',
   'images/FerrariF40.jpg',
   'images/Agnello.jpg',
-  'images/TheThingMonster.jpg',
-  'images/AlienVsTheThing.jpg',
-  'images/AlienInvasion.jpg',
   'images/LuciaAndJason.jpg',
-  'images/TommyRun.jpg',
- 
 ];
 
 backgroundImages.forEach((src) => {
