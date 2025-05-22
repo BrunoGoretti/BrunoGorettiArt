@@ -17,10 +17,21 @@ backgroundImages.forEach((src) => {
 });
 
 let currentImageIndex = 0;
-const backgroundDiv = document.querySelector('.background-slideshow');
+let currentLayer = 0;
+
+const layers = [
+  document.querySelector('.background-layer-1'),
+  document.querySelector('.background-layer-2')
+];
 
 function showBackground(index) {
-  backgroundDiv.style.backgroundImage = `url(${backgroundImages[index]})`;
+  const nextLayer = (currentLayer + 1) % 2;
+
+  layers[nextLayer].style.backgroundImage = `url(${backgroundImages[index]})`;
+  layers[nextLayer].classList.add('show');
+  layers[currentLayer].classList.remove('show');
+
+  currentLayer = nextLayer;
 }
 
 function nextBackground() {
@@ -29,18 +40,13 @@ function nextBackground() {
 }
 
 function prevBackground() {
-  currentImageIndex =
-    (currentImageIndex - 1 + backgroundImages.length) % backgroundImages.length;
+  currentImageIndex = (currentImageIndex - 1 + backgroundImages.length) % backgroundImages.length;
   showBackground(currentImageIndex);
 }
 
-// Initial display
 showBackground(currentImageIndex);
-
-// Auto change every 5 seconds
 let slideshowInterval = setInterval(nextBackground, 5000);
 
-// Button controls
 document.getElementById('next-background').addEventListener('click', () => {
   nextBackground();
   resetInterval();
