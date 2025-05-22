@@ -14,6 +14,9 @@
             <h1>
                 <a href="index.html" class="header-title">Bruno Goretti Art</a>
             </h1>
+            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+                &#9776;
+            </button>
             <div class="header-buttons">
                 <a href="index.html" class="header-button"><span>My artwork</span></a>
                 <a href="about.html" class="header-button"><span>About</span></a>
@@ -61,5 +64,22 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuToggle = document.getElementById("menu-toggle");
+            const headerButtons = document.querySelector(".header-buttons");
+
+            menuToggle.addEventListener("click", () => {
+                headerButtons.classList.toggle("open");
+            });
+
+            document.addEventListener("click", (e) => {
+                if (!headerButtons.contains(e.target) && e.target !== menuToggle) {
+                    headerButtons.classList.remove("open");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
