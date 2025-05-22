@@ -18,6 +18,7 @@
                 &#9776;
             </button>
             <div class="header-buttons">
+                <button class="close-sidebar" aria-label="Close menu">&times;</button>
                 <a href="index.html" class="header-button"><span>My artwork</span></a>
                 <a href="about.html" class="header-button"><span>About</span></a>
                 <a href="https://www.deviantart.com/brunogoretti" class="header-button" target="_blank">
@@ -65,21 +66,6 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const menuToggle = document.getElementById("menu-toggle");
-            const headerButtons = document.querySelector(".header-buttons");
-
-            menuToggle.addEventListener("click", () => {
-                headerButtons.classList.toggle("open");
-            });
-
-            document.addEventListener("click", (e) => {
-                if (!headerButtons.contains(e.target) && e.target !== menuToggle) {
-                    headerButtons.classList.remove("open");
-                }
-            });
-        });
-    </script>
+    <script src="sidebar.js"></script>
 </body>
 </html>

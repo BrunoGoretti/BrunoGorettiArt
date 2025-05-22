@@ -90,12 +90,7 @@ header {
   overflow: hidden;
 }
 
-.about-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
-  gap: 30px;
-}
+
 
 .profile-image {
   width: 250px;
@@ -156,11 +151,6 @@ header {
     gap: 15px;
   }
 
-  .about-header {
-    flex-direction: column;
-    text-align: center;
-  }
-
   .profile-image {
     width: 200px;
     height: 200px;
@@ -204,12 +194,9 @@ header {
     display: none;
     flex-direction: column;
     position: fixed;
-    top: 60px;
     right: 0;
     background-color: #1a1a1a;
-    /* width: 200px; */
     height: 100vh;
-    padding: 20px;
     box-shadow: -3px 0 10px rgba(0, 0, 0, 0.5);
     z-index: 10;
     transition: transform 0.3s ease;
